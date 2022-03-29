@@ -1,0 +1,84 @@
+* {
+    margin:0px;
+    padding:0px;
+    box-sizing:border-box; /*for prevent input to get out from div*/
+}
+body {
+    font-family:"Raleway",sans-serif;
+    background:#c9fac9;
+}
+.pw-meter {
+    position:absolute;
+    top:50%;
+    left:50%;
+    transform:translate(-50%, -50%);
+    width:350px;
+    background:#fff;
+    padding:20px;
+    border-radius: 15px;
+    box-shadow:0px 0px 20px 5px rgba(0,0,0,0.05);
+}
+.pw-meter h2 {
+    margin:10px 0px 30px;
+    font-size:20px;
+    color:#111;
+    text-align:center;
+}
+.pw-meter .form-element {
+    position:relative;
+}
+.pw-meter input {
+    padding:8px 30px 8px 10px;
+    width:100%;
+    font-size:16px;
+    border:1px solid grey;
+    border-radius: 5px;
+    outline:none;
+}
+input::placeholder {
+    color: rgb(182, 181, 181);
+}
+
+.pw-meter .pw-display-toggle-btn {
+    position:absolute;
+    right: 5%;
+    top: 20% !important;
+    width: 20px;
+    height: 20px;
+    text-align: center;
+    cursor: pointer;
+}
+.pw-meter .pw-display-toggle-btn i.bx-hide {
+    display: none;
+}
+.pw-meter .pw-display-toggle-btn.active i.bx-hide {
+    display: block;
+}
+.pw-meter .pw-display-toggle-btn.active i.bx-show {
+    display: none;
+}
+.pw-meter .pw-strength {
+    position:relative;
+    border-radius: 5px;
+    margin-top:10px;
+    text-align:center;
+    background:#f2f2f2;
+}
+.pw-meter .pw-strength span:nth-child(1) {
+    position:relative;
+    font-size:15px;
+    font-weight: bolder;
+    color:rgb(117, 111, 111);
+    z-index:2;/*To appear over progress bar*/
+    padding-bottom: 0;
+}
+.pw-meter .pw-strength span:nth-child(2) {
+    position:absolute;
+    top: 0px;
+    left: 0px;
+    width: 0%;
+    height: 100%;
+    border-radius: 5px;
+    z-index: 1;
+    transition: all .5s ease-in-out;
+}
